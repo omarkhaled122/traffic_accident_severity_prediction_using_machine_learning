@@ -1,0 +1,22 @@
+PROJECT_NAME=traffic_accident_severity_prediction_using_machine_learning
+ENVIRONMENT=development
+LOG_LEVEL=INFO
+DATA_VERSION=1
+DATA_VARIANT=traffic_accident_severity_prediction_using_machine_learning_v${DATA_VERSION}
+
+DOCKER_REGISTRY=[OPTIONAL] your-docker-registry-url (do not include 'http://')
+S3_BUCKET=[OPTIONAL] your-bucket-for-syncing-data (do not include 's3://')
+
+APP_PORT=8080
+
+SQL=src/data/${DATA_VARIANT}.sql
+DATASET=data/raw/${DATA_VARIANT}.feather
+TRAINSET=data/processed/train_${DATA_VARIANT}.feather
+TESTSET=data/processed/test_${DATA_VARIANT}.feather
+FEATURE_EXTRACTOR=features/${DATA_VARIANT}.pkl
+DEV_PREDICTIONS=reports/dev_predictions_${DATA_VARIANT}.feather
+TEST_REPORT=reports/${DATA_VARIANT}.md
+TEST_PREDICTIONS=reports/test_predictions_${DATA_VARIANT}.feather
+MODEL=models/${DATA_VARIANT}.pkl
+MODEL_EVAL=models/eval_${DATA_VARIANT}.pkl
+VISUALIZATIONS=reports/visualizations_${DATA_VARIANT}.pdf
